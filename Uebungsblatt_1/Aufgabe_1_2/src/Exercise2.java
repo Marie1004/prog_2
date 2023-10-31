@@ -15,17 +15,15 @@ public class Exercise2 {
      * f) ein bestimmtes Element im Array entfernt;
      * g) ein Element an einer bestimmten Position im Array hinzufügt.
      *
-     * @param args
+     * @param args - Standard
      */
 
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
         int arrayLength;
-        double average;
-        double standardDeviation;
-        int min;
-        int max;
         int elementIndex;
+        int[] newElements;
+
 
 
         System.out.println("\nWie lang ist das Array?");
@@ -37,18 +35,19 @@ public class Exercise2 {
             elements[i] = userInput.nextInt();
         }
 
-        average = task2a(elements);
-        System.out.println("\nDer Durchschnitt der Elemente lautet: " + average);
+        // a) Berechnung des Durchschnitts der Elemente in einem Array
+        System.out.println("\nDer Durchschnitt der Elemente lautet: " + task2a(elements));
 
-        standardDeviation = task2b(elements, average);
-        System.out.println("\nDie Standardabweichung der Elemente lautet: " + standardDeviation);
+        // b) die Standardabweichung der Elemente im Array berechnet
+        System.out.println("\nDie Standardabweichung der Elemente lautet: " + task2b(elements));
 
-        max = task2c(elements);
-        System.out.println("\nDer Maximalwert der Elemente lautet: " + max);
+        // c) den Maximalwert der Elemente im Array berechnet
+        System.out.println("\nDer Maximalwert der Elemente lautet: " + task2c(elements));
 
-        min = task2d(elements);
-        System.out.println("\nDer Minimalwert der Elemente lautet: " + min);
+        // d) den Minimalwert der Elemente im Array berechnet
+        System.out.println("\nDer Minimalwert der Elemente lautet: " + task2d(elements));
 
+        // e) den Index eines Elements im Array nach Wert bestimmt
         elementIndex = task2e(elements, userInput);
         if(elementIndex == -1) {
             System.out.println("\nKeines der Elemente des Arrays besitzt diesen Wert.");
@@ -56,37 +55,46 @@ public class Exercise2 {
             System.out.println("\nDas Element mit diesem Wert befindet sich an der Stelle (Index): " + elementIndex);
         }
 
-        System.out.print("\nDie Elemente des Arrays lauten: ");
-        for(int j = 0; j < elements.length; j++) {
-            System.out.print(elements[j] + "; ");
+        // f) ein bestimmtes Element im Array entfernt
+        // Output original Array
+        arrayOutput(elements, false);
+
+        newElements = task2f(elements, userInput);
+        arrayOutput(newElements, true);
+
+        // g) ein Element an einer bestimmten Position im Array hinzufuegt
+        newElements = task2g(elements, userInput);
+        arrayOutput(newElements, true);
+    }
+
+    /**
+     * Output der Elemente des Arrays
+     * @param array - das jeweilige Array
+     * @param newArray - Boolean, der aussagt, ob das array das Original oder ein neu erstelltes ist
+     */
+    public static void arrayOutput(int[] array, boolean newArray) {
+        if(!newArray) {
+            System.out.print("\nDie Elemente des Arrays lauten: ");
+        } else {
+            System.out.print("\nDie Elemente des neuen Arrays lauten: ");
         }
-        int[] newShorterElements = task2f(elements, userInput);
-
-        System.out.print("\nDie Elemente des neuen Arrays lauten: ");
-        for(int k = 0; k < newShorterElements.length; k++) {
-            System.out.print(newShorterElements[k] + "; ");
-        }
-
-        int[] newLongerElements = task2g(elements, userInput);
-
-        System.out.print("\nDie Elemente des neuen Arrays lauten: ");
-        for(int l = 0; l < newLongerElements.length; l++) {
-            System.out.print(newLongerElements[l] + "; ");
+        for (int element: array) {
+            System.out.print(element + "; ");
         }
     }
 
     /**
      * Berechnung des Durchschnitts
      *
-     * @param elements
-     * @return
+     * @param elements - das originale Array
+     * @return average - den Durchschnittswert der Elemente im Array
      */
     public static double task2a(int[] elements) {
         double sum = 0;
         double average;
 
-        for(int i = 0; i < elements.length; i++) {
-            sum = sum + elements[i];
+        for(int element: elements) {
+            sum = sum + element;
         }
 
         average = sum / elements.length;
@@ -97,18 +105,20 @@ public class Exercise2 {
     /**
      * Berechnung der Standardabweichung
      *
-     * @param elements
-     * @param average
-     * @return
+     * @param elements - das originale Array
+     * @return standardDeviation - die Standardabweichung
      */
-    public static double task2b(int[] elements, double average) {
+    public static double task2b(int[] elements) {
         double underSquareRoot = 0;
         int denominator;
         double counter;
         double standardDeviation;
+        double average;
 
-        for(int i = 0; i < elements.length; i++) {
-            underSquareRoot = underSquareRoot + Math.pow((elements[i] - average),2);
+        average = task2a(elements);
+
+        for(int element: elements) {
+            underSquareRoot = underSquareRoot + Math.pow((element - average),2);
         }
 
         denominator = elements.length - 1;
@@ -123,16 +133,16 @@ public class Exercise2 {
     /**
      * Berechnung des Maximalwerts der Elemente
      *
-     * @param elements
-     * @return
+     * @param elements - das originale Array
+     * @return max - der hoechste im Array enthaltene Wert
      */
     public static int task2c(int[] elements) {
         int max = elements[0];
 
         if(elements.length > 1) {
-            for(int i = 0; i < elements.length; i++) {
-                if(max < elements[i]) {
-                    max = elements[i];
+            for(int element: elements) {
+                if(max < element) {
+                    max = element;
                 }
             }
         }
@@ -143,16 +153,16 @@ public class Exercise2 {
     /**
      * Berechnung des Minimalwerts der Elemente
      *
-     * @param elements
-     * @return
+     * @param elements - das originale Array
+     * @return min - der niedrigste im Array enthaltene Wert
      */
     public static int task2d(int[] elements) {
         int min = elements[0];
 
-        if(elements.length > 0) {
-            for(int i = 0; i < elements.length; i++) {
-                if(min > elements[i]) {
-                    min = elements[i];
+        if(elements.length > 1) {
+            for(int element: elements) {
+                if (min > element) {
+                    min = element;
                 }
             }
         }
@@ -163,9 +173,9 @@ public class Exercise2 {
     /**
      * Bestimmen des Indexes eines Elements im Array
      *
-     * @param elements
-     * @param userInput
-     * @return
+     * @param elements - das originale Array
+     * @param userInput - fuer Nutzereingaben im Terminal
+     * @return searchedIndex - der Index des vom Nutzer gesuchten Elements
      */
     public static int task2e(int[] elements, Scanner userInput) {
         int searchedElement;
@@ -182,9 +192,9 @@ public class Exercise2 {
     /**
      * Finden des Indexes vom gesuchten Element
      *
-     * @param elements
-     * @param searchedElement
-     * @return
+     * @param elements - das originale Array
+     * @param searchedElement - das vom Nutzer gesuchte Element
+     * @return i / -1 - der gesuchte Index
      */
     public static int findIndex(int[] elements, int searchedElement) {
         for(int i = 0; i < elements.length; i++) {
@@ -197,44 +207,51 @@ public class Exercise2 {
     }
 
     /**
-     * Löschen eines Elements aus dem Array
+     * Loeschen eines Elements aus dem Array
      *
-     * @param elements
-     * @param userInput
-     * @return
+     * @param elements - das originale Array
+     * @param userInput - fuer Nutzereingaben im Terminal
+     * @return newArray - ein neues Array mit den verbleibenden Elementen
      */
     public static int[] task2f(int[] elements, Scanner userInput) {
         int searchedElement;
-        int searchedIndex;
+        int searchedIndex = -1;
 
         System.out.println("\nWelches Element soll aus dem Array entfernt werden?");
-        searchedElement = userInput.nextInt();
 
-        searchedIndex = findIndex(elements, searchedElement);
+        while(searchedIndex == -1) {
+            searchedElement = userInput.nextInt();
 
-        if(searchedIndex == -1) {
-            return elements;
-        } else {
-            int[] newArray = new int[elements.length - 1];
+            searchedIndex = findIndex(elements, searchedElement);
 
-            for(int i = 0; i < searchedIndex; i++) {
-                newArray[i] = elements[i];
+            if(searchedIndex == -1) {
+                System.out.println("Diese Zahl ist kein Element der Liste. Bitte wähle eines der folgenden Elemente aus.");
+                for(int element: elements) {
+                    System.out.print(element + "; ");
+                    System.out.println();
+                }
             }
-
-            for(int j = searchedIndex + 1; j < elements.length; j++) {
-                newArray[(j-1)] = elements[j];
-            }
-
-            return newArray;
         }
+
+        int[] newArray = new int[elements.length - 1];
+
+        for(int i = 0; i < searchedIndex; i++) {
+            newArray[i] = elements[i];
+        }
+
+        for(int j = searchedIndex + 1; j < elements.length; j++) {
+            newArray[(j-1)] = elements[j];
+        }
+
+        return newArray;
     }
 
     /**
      * Hinzufuegen eines Elements
      *
-     * @param elements
-     * @param userInput
-     * @return
+     * @param elements - das originale Array
+     * @param userInput - fuer Nutzereingaben im Terminal
+     * @return newArray - ein neues Array mit dem zusaetzlichen Element
      */
     public static int[] task2g(int[] elements, Scanner userInput) {
         int newElement;
@@ -245,6 +262,11 @@ public class Exercise2 {
 
         System.out.println("\nAn welchen Index soll das Element hinzugefügt werden?");
         newIndex = userInput.nextInt();
+
+        while(newIndex < 0 || newIndex > (elements.length + 1)) {
+            System.out.println("\nDieser Index kann nicht gewählt werden. Bitte wähle einen Index zwischen 0 und " + (elements.length + 1));
+            newIndex = userInput.nextInt();
+        }
 
         int newArrayLength = elements.length + 1;
 
@@ -257,7 +279,7 @@ public class Exercise2 {
         newArray[newIndex] = newElement;
 
         for(int j = newIndex; j < elements.length; j++) {
-            newArray[(j+1)] = elements[j];
+            newArray[(j + 1)] = elements[j];
         }
 
         return newArray;
