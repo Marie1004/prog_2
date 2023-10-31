@@ -2,23 +2,21 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+/**
+ * Schreiben Sie ein Java-Programm mit den folgenden statischen Methoden (nutzen
+ * Sie Ihre bisherigen Lösungen, ggf. schreiben Sie Ihren Code entsprechend um):
+ * a) Berechnung des Durchschnitts der Elemente in einem Array;
+ * b) Berechnung der Standardabweichung der Elemente in einem Array;
+ * c) Berechnung des Maximalwerts in einem Array;
+ * d) Berechnung des Minimalwerts in einem Array;
+ * e) Berechnung der Statistik in einem Array;
+ * f) Ermittlung des Index eines Elements in einem Array nach Wert;
+ * g) Entfernen eines bestimmten Elements in einem Array;
+ * h) Einfügen eines Elements an einer bestimmten Position in ein Array.
+ * Verwenden Sie bei Bedarf weitere Methoden Ihrer Wahl aus der Arrays-Klassenbibliothek1.
+ *
+ */
 public class Exercise1 {
-    /**
-     * Schreiben Sie ein Java-Programm mit den folgenden statischen Methoden (nutzen
-     * Sie Ihre bisherigen Lösungen, ggf. schreiben Sie Ihren Code entsprechend um):
-     * a) Berechnung des Durchschnitts der Elemente in einem Array;
-     * b) Berechnung der Standardabweichung der Elemente in einem Array;
-     * c) Berechnung des Maximalwerts in einem Array;
-     * d) Berechnung des Minimalwerts in einem Array;
-     * e) Berechnung der Statistik in einem Array;
-     * f) Ermittlung des Index eines Elements in einem Array nach Wert;
-     * g) Entfernen eines bestimmten Elements in einem Array;
-     * h) Einfügen eines Elements an einer bestimmten Position in ein Array.
-     * Verwenden Sie bei Bedarf weitere Methoden Ihrer Wahl aus der Arrays-Klassenbibliothek1.
-     *
-     */
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
         int arrayLength;

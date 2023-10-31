@@ -1,5 +1,13 @@
 import java.util.Scanner; // Fuer den Input / die Scanner-Klasse
 
+/**
+ * Schreiben Sie ein Java-Programm, das vom Benutzer
+ * a) den Namen erhält und eine personalisierte Begrüßung ausgibt.
+ * b) eine Zahl erhält und ausgibt, ob sie positiv, gleich Null oder negativ ist.
+ * c) zwei Zahlen erhält und die Summe (Addition), Multiplikation, Subtraktion, Division ausgibt.
+ * d) drei Zahlen erhält und die höchste Zahl ausgibt.
+ * e) a, b und c erhält und die entsprechende quadratische Gleichung löst.
+ */
 public class Exercise1 {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
