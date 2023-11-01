@@ -22,7 +22,7 @@ public class Exercise1 {
     /**
      * Eine Funktion, welche den Namen des Users abfragt und in einer personalisierten Begrueßung ausgibt
      *
-     * @param userInput
+     * @param userInput  - fuer Nutzereingaben im Terminal
      */
     public static void task1a(Scanner userInput) {
         String userName;
@@ -36,7 +36,7 @@ public class Exercise1 {
     /**
      * Eine Funktion, die eine Zahl vom User abfragt und ausgibt, egal ob sie positiv, gleich Null oder negativ ist
      *
-     * @param userInput
+     * @param userInput  - fuer Nutzereingaben im Terminal
      */
     public static void task1b(Scanner userInput) {
         double num;
@@ -50,7 +50,7 @@ public class Exercise1 {
     /**
      * Eine Funktion, die zwei Zahlen vom User abfragt und die Summe (Addition), Multiplikation, Subtraktion, Division ausgibt
      *
-     * @param userInput
+     * @param userInput  - fuer Nutzereingaben im Terminal
      */
     public static void task1c(Scanner userInput) {
         double num1;
@@ -83,7 +83,7 @@ public class Exercise1 {
     /**
      * Eine Funktion, die drei Zahlen vom User abfragt und die hoechste Zahl ausgibt
      *
-     * @param userInput
+     * @param userInput - fuer Nutzereingaben im Terminal
      */
     public static void task1d(Scanner userInput) {
         double num1;
@@ -112,8 +112,8 @@ public class Exercise1 {
     /**
      * Ermitteln der höchsten Zahl
      *
-     * @param numbers
-     * @return
+     * @param numbers - das Array mit den Zahlen
+     * @return highestNum - die hoechste Nummer
      */
     public static double getHighestNumber(double[] numbers) {
         double highestNum = 0;
@@ -130,8 +130,7 @@ public class Exercise1 {
     /**
      * Eine Funktion, die für a, b und c jeweils Zahlen vom User abfragt und mit diesen die entsprechende quadratische Gleichung löst
      *
-     * @param userInput
-     * @return
+     * @param userInput - fuer Nutzereingaben im Terminal
      */
     public static void task1e(Scanner userInput) {
         double a;
@@ -160,7 +159,7 @@ public class Exercise1 {
         // Berechnen des Nenners
         denominator = 2 * a;
 
-        // Ermitteln dess Wertes unter der Wurzel im Zaehler
+        // Ermitteln des Wertes unter der Wurzel im Zaehler
         bHoch2 = Math.pow(b, 2);
         underSquareRoot = bHoch2 - (4 * a * c);
         System.out.println("underSquareRoot = " + underSquareRoot);
@@ -229,8 +228,8 @@ public class Exercise1 {
     /**
      * Ermitteln der Loesungsmenge von x
      *
-     * @param underSquareRoot
-     * @return
+     * @param underSquareRoot - die Werte unter der Wurzel
+     * @return foundArrayLength - die Array-Laenge
      */
     public static int determineNumberOfSolutions(double underSquareRoot) {
         int foundArrayLength;
