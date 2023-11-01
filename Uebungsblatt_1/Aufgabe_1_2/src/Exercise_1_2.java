@@ -1,6 +1,6 @@
 import java.util.Scanner; // Fuer den Input bzw. die Scanner-Klasse
 
-public class Exercise2 {
+public class Exercise_1_2 {
     /**
      * Schreiben Sie ein Java-Programm, das:
      * - die Länge eines Arrays,
@@ -20,35 +20,27 @@ public class Exercise2 {
 
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
-        int arrayLength;
+        int[] userArray;
         int elementIndex;
         int[] newElements;
 
-
-
-        System.out.println("\nWie lang ist das Array?");
-        arrayLength = userInput.nextInt();
-        int[] elements = new int[arrayLength];
-
-        for(int i = 0; i < elements.length; i++) {
-            System.out.println("\nWie lautet der Wert des Elements an Stelle " + i + "? (Ohne Komma)");
-            elements[i] = userInput.nextInt();
-        }
+        // Abfrage des Arrays beim Nutzer
+        userArray = getArrayFromUser(userInput);
 
         // a) Berechnung des Durchschnitts der Elemente in einem Array
-        System.out.println("\nDer Durchschnitt der Elemente lautet: " + task2a(elements));
+        System.out.println("\nDer Durchschnitt der Elemente lautet: " + task2a(userArray));
 
         // b) die Standardabweichung der Elemente im Array berechnet
-        System.out.println("\nDie Standardabweichung der Elemente lautet: " + task2b(elements));
+        System.out.println("\nDie Standardabweichung der Elemente lautet: " + task2b(userArray));
 
         // c) den Maximalwert der Elemente im Array berechnet
-        System.out.println("\nDer Maximalwert der Elemente lautet: " + task2c(elements));
+        System.out.println("\nDer Maximalwert der Elemente lautet: " + task2c(userArray));
 
         // d) den Minimalwert der Elemente im Array berechnet
-        System.out.println("\nDer Minimalwert der Elemente lautet: " + task2d(elements));
+        System.out.println("\nDer Minimalwert der Elemente lautet: " + task2d(userArray));
 
         // e) den Index eines Elements im Array nach Wert bestimmt
-        elementIndex = task2e(elements, userInput);
+        elementIndex = task2e(userArray, userInput);
         if(elementIndex == -1) {
             System.out.println("\nKeines der Elemente des Arrays besitzt diesen Wert.");
         } else {
@@ -57,14 +49,35 @@ public class Exercise2 {
 
         // f) ein bestimmtes Element im Array entfernt
         // Output original Array
-        arrayOutput(elements, false);
+        arrayOutput(userArray, false);
 
-        newElements = task2f(elements, userInput);
+        newElements = task2f(userArray, userInput);
         arrayOutput(newElements, true);
 
         // g) ein Element an einer bestimmten Position im Array hinzufuegt
-        newElements = task2g(elements, userInput);
+        newElements = task2g(userArray, userInput);
         arrayOutput(newElements, true);
+    }
+
+    /**
+     * Das Array vom Nutzer erhalten
+     * @param userInput - fuer Nutzereingaben im Terminal
+     * @return elements - das vom Nutzer angegebene Array
+     */
+    public static int[] getArrayFromUser(Scanner userInput) {
+        int arrayLength;
+        int[] elements;
+
+        System.out.println("\nWie lang ist das Array?");
+        arrayLength = userInput.nextInt();
+        elements = new int[arrayLength];
+
+        for(int i = 0; i < elements.length; i++) {
+            System.out.println("\nWie lautet der Wert des Elements an Stelle " + i + "? (Ohne Komma)");
+            elements[i] = userInput.nextInt();
+        }
+
+        return elements;
     }
 
     /**

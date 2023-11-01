@@ -16,28 +16,21 @@ import java.util.Arrays;
  * Verwenden Sie bei Bedarf weitere Methoden Ihrer Wahl aus der Arrays-Klassenbibliothek1.
  *
  */
-public class Exercise1 {
+public class Exercise_2_1 {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
-        int arrayLength;
+        int[] userArray;
         int elementIndex;
 
-
-        System.out.println("\nWie lang ist das Array?");
-        arrayLength = userInput.nextInt();
-        int[] elements = new int[arrayLength];
-
-        for(int i = 0; i < elements.length; i++) {
-            System.out.println("\nWie lautet der Wert des Elements an Stelle " + i + "? (Ohne Komma)");
-            elements[i] = userInput.nextInt();
-        }
+        // Abfrage des Arrays beim Nutzer
+        userArray = getArrayFromUser(userInput);
 
         // e) Berechnung der Statistik in einem Array
-        task1e(elements);
+        task1e(userArray);
 
 
         // f) Ermittlung des Index eines Elements in einem Array nach Wert
-        elementIndex = task1f(elements, userInput);
+        elementIndex = task1f(userArray, userInput);
         if(elementIndex < 0) {
             System.out.println("\nKeines der Elemente des Arrays besitzt diesen Wert.");
         } else {
@@ -45,13 +38,34 @@ public class Exercise1 {
         }
 
 
-        System.out.print("\nDie Elemente des Arrays lauten: " + Arrays.toString(elements));
+        System.out.print("\nDie Elemente des Arrays lauten: " + Arrays.toString(userArray));
 
         // g) Entfernen eines bestimmten Elements in einem Array;
-        System.out.print("\nDie Elemente des neuen Arrays lauten: " + Arrays.toString(task1g(elements, userInput)));
+        System.out.print("\nDie Elemente des neuen Arrays lauten: " + Arrays.toString(task1g(userArray, userInput)));
 
         // h) Einfügen eines Elements an einer bestimmten Position in ein Array
-        System.out.print("\nDie Elemente des neuen Arrays lauten: " + Arrays.toString(task1h(elements, userInput)));
+        System.out.print("\nDie Elemente des neuen Arrays lauten: " + Arrays.toString(task1h(userArray, userInput)));
+    }
+
+    /**
+     * Das Array vom Nutzer erhalten
+     * @param userInput - fuer Nutzereingaben im Terminal
+     * @return elements - das vom Nutzer angegebene Array
+     */
+    public static int[] getArrayFromUser(Scanner userInput) {
+        int arrayLength;
+        int[] elements;
+
+        System.out.println("\nWie lang ist das Array?");
+        arrayLength = userInput.nextInt();
+        elements = new int[arrayLength];
+
+        for(int i = 0; i < elements.length; i++) {
+            System.out.println("\nWie lautet der Wert des Elements an Stelle " + i + "? (Ohne Komma)");
+            elements[i] = userInput.nextInt();
+        }
+
+        return elements;
     }
 
     /**

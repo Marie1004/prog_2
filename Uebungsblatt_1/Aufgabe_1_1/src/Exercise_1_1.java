@@ -8,7 +8,7 @@ import java.util.Scanner; // Fuer den Input / die Scanner-Klasse
  * d) drei Zahlen erhält und die höchste Zahl ausgibt.
  * e) a, b und c erhält und die entsprechende quadratische Gleichung löst.
  */
-public class Exercise1 {
+public class Exercise_1_1 {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
 

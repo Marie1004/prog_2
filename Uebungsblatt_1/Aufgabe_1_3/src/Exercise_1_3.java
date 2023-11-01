@@ -25,7 +25,7 @@ import javax.swing.JOptionPane;
  * Schritt 5:
  *      Beenden Sie das Programm, wenn die Zahl 99 eingegeben wird.
  */
-public class Exercise3 {
+public class Exercise_1_3 {
     public static void main(String[] args) {
         int secretNumber;
         int userNumber;
