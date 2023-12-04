@@ -59,7 +59,7 @@ public class Exercise_1_3 {
             }
 
             if(counter == 10) {
-                System.out.println("\nLeider hast du diemal die Zahl nicht erraten. Viel Glück beim nächsten Mal.");
+                System.out.println("\nLeider hast du diesmal die Zahl nicht erraten. Viel Glück beim nächsten Mal.");
                 break;
             }
         }

@@ -15,7 +15,6 @@ public class Exercise_1_2 {
      * f) ein bestimmtes Element im Array entfernt;
      * g) ein Element an einer bestimmten Position im Array hinzufügt.
      *
-     * @param args - Standard
      */
 
     public static void main(String[] args) {
@@ -55,7 +54,7 @@ public class Exercise_1_2 {
         arrayOutput(newElements, true);
 
         // g) ein Element an einer bestimmten Position im Array hinzufuegt
-        newElements = task2g(userArray, userInput);
+        newElements = task2g(newElements, userInput);
         arrayOutput(newElements, true);
     }
 
