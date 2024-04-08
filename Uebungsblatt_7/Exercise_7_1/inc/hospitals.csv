@@ -1,0 +1,37 @@
+Index,Hospital,Number of rooms,reservedRooms
+0,Krankenhaus des Maßregelvollzugs Berlin,100,2
+1,Krankenhaus Bethel Berlin,200,50
+2,Kliniken im Theodor-Wenzel-Werk,300,300
+3,Klinik Schöneberg,100,12
+4,Klinik am See,300,288
+5,Klinik “Helle Mitte” Berlin,130,35
+6,Jüdisches Krankenhaus Berlin,210,46
+7,Immanuel Krankenhaus Berlin - Standort Buch,600,57
+8,Immanuel Krankenhaus Berlin - Standort Berlin-Wannsee,530,53
+9,Immanuel Klinik Rüdersdorf,500,346
+10,Helios Klinikum Emil von Behring,200,64
+11,Helios Klinikum Berlin-Buch,300,36
+12,Havelklinik Berlin,100,32
+13,Gemeinschaftskrankenhaus Havelhöhe,300,45
+14,Fugger-Klinik,130,34
+15,Friedrich von Bodelschwingh-Klinik,210,210
+16,Franziskus Krankenhaus Berlin,600,234
+17,Fliedner Klinik Berlin,530,321
+18,Evangelisches Waldkrankenhaus Spandau,500,213
+19,Evangelisches Krankenhaus Königin Elisabeth Herzberge,200,43
+20,Evangelisches Krankenhaus Hubertus,300,23
+21,Evangelisches Johannesstift - Wichernkrankenhaus,100,42
+22,Evangelisches Geriatriezentrum Berlin (EGZB),100,12
+23,Evangelische Lungenklinik Berlin,130,32
+24,Evangelische Elisabeth Klinik,210,123
+25,DRK Schwesternschaft Berlin,600,321
+26,DRK Kliniken Berlin Westend,530,345
+27,DRK Kliniken Berlin Mitte,500,432
+28,DRK Kliniken Berlin Köpenick,200,123
+29,DRK Kliniken Berlin | Wiegmann Klinik,300,32
+30,Die Pfalzburger - Tannenhof Berlin-Brandenburg,100,12
+31,Charité - Universitätsmedizin Berlin,300,32
+32,Caritas-Klinik Dominikus Berlin Reinickendorf,130,23
+33,Argora Klinik Berlin,210,43
+34,Alexianer St. Joseph-Krankenhaus Berlin-Weißensee,600,232
+35,Alexianer Krankenhaus Hedwigshöhe,530,234
