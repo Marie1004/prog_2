@@ -1,4 +1,4 @@
-import java.util.ArrayList; // import the ArrayList class
+import java.util.ArrayList;
 
 public class Box extends Shape {
     ArrayList<Shape> shapes = new ArrayList<Shape>(); // Create an ArrayList object
@@ -34,5 +34,10 @@ public class Box extends Shape {
         }
 
         return remainingVolume;
+    }
+
+    @Override
+    public double getVolume() {
+        return this.volume;
     }
 }

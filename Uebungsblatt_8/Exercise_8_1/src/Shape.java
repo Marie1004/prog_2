@@ -1,7 +1,4 @@
-public class Shape {
-    double volume;
-
-    public double getVolume() {
-        return volume;
-    }
+abstract class Shape {
+    protected double volume;
+    public abstract double getVolume();
 }

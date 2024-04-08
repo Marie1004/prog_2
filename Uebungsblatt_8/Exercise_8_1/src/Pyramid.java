@@ -9,4 +9,9 @@ public class Pyramid extends Shape {
         this.baseArea = baseArea;
         this.volume = (1.0/3.0) * baseArea * height;
     }
+
+    @Override
+    public double getVolume() {
+        return this.volume;
+    }
 }

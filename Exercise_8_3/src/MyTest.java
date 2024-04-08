@@ -1,17 +1,39 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
+interface onChangeListener {
+    void onChange(A a);
+}
+class Listener implements onChangeListener {
+    @Override
+    public void onChange(A a) {
+        // Event
+        System.out.println("Listener is informed!");
+    }
+}
+class A {
+    private int x;
+    private onChangeListener onChangeListener = null;
+    public A() {
+        this.x = 0;
+    }
+    public void setOnChangeListener(onChangeListener onChangeListener) {
+        this.onChangeListener = onChangeListener;
+    }
+    private void notifyOnChangeListener() {
+        this.onChangeListener.onChange(this);
+    }
+    public void setX(int x) {
+        this.x = x;
+        notifyOnChangeListener();
+    }
+    public int getX() {
+        return this.x;
+    }
+}
+public class MyTest {
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
-        }
+        A a = new A();
+        a.setOnChangeListener(new Listener());
+        a.setX(3); // Changed: 3
+        a.setX(4); // Changed: 4
+        a.setX(5); // Changed: 5
     }
 }

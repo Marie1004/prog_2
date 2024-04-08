@@ -1,9 +1,7 @@
-public class SolidOfRevolution extends Shape {
-    double radius;
+abstract class SolidOfRevolution extends Shape {
+    protected double radius;
 
-    public SolidOfRevolution(double volume , double radius) {
-        super();
-        this.volume = volume;
+    public SolidOfRevolution(double radius) {
         this.radius = radius;
     }
 

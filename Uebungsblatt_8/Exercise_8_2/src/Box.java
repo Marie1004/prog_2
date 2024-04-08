@@ -40,4 +40,8 @@ public class Box extends Shape {
     public double getVolume() {
         return this.volume;
     }
+
+    public ArrayList<Shape> getShapes() {
+        return shapes;
+    }
 }

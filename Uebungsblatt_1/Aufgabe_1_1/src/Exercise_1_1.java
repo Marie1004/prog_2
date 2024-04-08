@@ -34,17 +34,24 @@ public class Exercise_1_1 {
     }
 
     /**
-     * Eine Funktion, die eine Zahl vom User abfragt und ausgibt, egal ob sie positiv, gleich Null oder negativ ist
+     * Eine Funktion, die eine Zahl vom User abfragt und ausgibt, ob sie positiv, gleich Null oder negativ ist
      *
-     * @param userInput  - fuer Nutzereingaben im Terminal
+     * @param userInput
      */
     public static void task1b(Scanner userInput) {
         double num;
+        String resultString;
 
         System.out.println("\nGib bitte eine beliebige Zahl ein?\n(Verwende bitte ein Komma im Falle einer Gleitkommazahl).");
         num = userInput.nextDouble();
 
         System.out.println("\nDie von Ihnen angegebene Zahl lautet: " + num);
+
+        if(num > 0) { resultString = "positiv"; }
+        else if(num == 0) { resultString = "gleich Null";}
+        else { resultString = " negativ";}
+
+        System.out.println("\nDie von Ihnen angegebene Zahl ist: " + resultString);
     }
 
     /**
